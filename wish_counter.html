@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wish_counter</title>
+
+    <link href="genshin.css" rel="stylesheet">
+    <link href="wish_counter.css" rel="stylesheet">
+    <script src="wish_counter.js" type="module"></script>
+</head>
+<body>
+    <div id="control-panel" hidden>
+        <div class="flex" style="color: white; font-size: 3em;">
+            <div style="display: block; text-align:  center;">
+                追加
+                <select id="add-char-selector" style="display: block;">
+                    <option selected disabled>-</option>
+                    <option value="_DIV">区切り線</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div id="main_div">
+        <div class="char-table flex">   
+        </div>
+    </div>
+</body>
+</html>

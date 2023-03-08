@@ -1,0 +1,74 @@
+body {
+    margin: 0;
+}
+
+#main_div {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+}
+
+body > * {
+    position: absolute;
+}
+
+.flex {
+    display: flex;
+
+    width: 100vw;
+    gap: 1em;
+    flex-wrap: wrap;
+    
+    position: relative;
+    top: 50%;
+    justify-content: center;
+    transform: translate(0,-50%);
+}
+
+.char-block {
+    text-align: center;
+}
+
+.icon-img {
+    max-height: 10em;
+    max-width: 10em;
+}
+
+.counter {
+    font-size: 2em;
+    -webkit-text-stroke: 1px black;
+}
+
+.prev-counter {
+    font-size: 1em;
+    -webkit-text-stroke: 0.7px black;
+}
+
+#control-panel {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+}
+
+.Pyro {
+    color: #EC4923;
+}
+.Hydro {
+    color: #00BFFF;
+}
+.Anemo {
+    color: #359697;
+}
+.Electro {
+    color: #945dc4;
+}
+.Dendro {
+    color: #608a00;
+}
+.Cryo {
+    color: #4682B4;
+}
+.Geo {
+    color: #debd6c;
+}

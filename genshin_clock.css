@@ -1,0 +1,7 @@
+body {
+    -webkit-text-stroke: 5px black;
+    color: white;
+
+    background-color: white;
+    text-align: center;
+}
