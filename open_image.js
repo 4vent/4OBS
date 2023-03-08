@@ -2,12 +2,19 @@ import { getLocationParm } from "./urlparser.js"
 
 function main() {
     const img = document.querySelector("img");
-    document.querySelector("#src").addEventListener("change", ev => {
-        img.src = ev.target.value;
+    const src = getLocationParm().src;
+    console.log(getLocationParm())
+    
+    if (src == undefined) {
+        document.querySelector("#src").addEventListener("change", ev => {
+            window.open(location.href + '?src=' + encodeURIComponent(ev.target.value))
+        })
+    } else {
+        img.src = src;
         document.querySelector("#img").toggleAttribute("hidden");
         document.querySelector("#srcinput").toggleAttribute("hidden");
-    })
-    registerMouseEvent();
+        registerMouseEvent();
+    }
 }
 
 function registerMouseEvent() {

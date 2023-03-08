@@ -1,9 +1,3 @@
-/*
- * 
- * 
- * 
- */
-
 /**
  * 
  * @param {String} url 
@@ -27,7 +21,7 @@ function parse(url, decodeParm) {
         var [k, v] = e.split('=');
 
         if (decodeParm) {
-            v = decodeURI(v);
+            v = decodeURIComponent(v);
         }
 
         if (structure.parm[k] == undefined) {
