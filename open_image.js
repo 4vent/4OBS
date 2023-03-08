@@ -7,7 +7,7 @@ function main() {
     
     if (src == undefined) {
         document.querySelector("#src").addEventListener("change", ev => {
-            window.open(location.href + '?src=' + encodeURIComponent(ev.target.value))
+            location.href = location.href + '?src=' + encodeURIComponent(ev.target.value);
         })
     } else {
         img.src = src;
@@ -28,7 +28,7 @@ function registerMouseEvent() {
     })
 
     document.addEventListener("mousedown", ev => {
-        if (ev.button == 1) {
+        if (ev.button == 1 || ev.button == 0) {
             ev.preventDefault();
             isMiddleMouseButton = true;
             prevMouseXY[0] = ev.clientX;
@@ -41,7 +41,7 @@ function registerMouseEvent() {
         console.log("ev.clientX : " + ev.clientX);
     })
     document.addEventListener("mouseup", ev => {
-        if (ev.button == 1) {
+        if (ev.button == 1 || ev.button == 0) {
             ev.preventDefault();
             isMiddleMouseButton = false;
         }
