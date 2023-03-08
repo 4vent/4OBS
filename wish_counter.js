@@ -1,3 +1,5 @@
+import { getLocationParm } from "./urlparser.js"
+
 const API_URL = "https://script.google.com/macros/s/AKfycbxzA8lVK1Qn8Tbv4jxmYehvxkN5LoP_zYFIboY1Pu0G_rXgHsIh4KYN-O5Tku0X1Duq/exec";
 const CHAR_DATABASE = {};
 async function main() {
@@ -45,7 +47,17 @@ async function main() {
     if (cookie._char_list == "" || cookie._char_list == undefined) char_list = "mona_041-qin_003-diluc_016-keqing_042-qiqi_035-tighnari_069-dehya_079";
     else char_list = cookie._char_list;
 
-    const keys = char_list.split("-");
+    const parms = getLocationParm();
+    var keys = [];
+    if (parms.char == undefined) {
+        keys = char_list.split("-");
+    } else {
+        parms.char.split("-").forEach(name => {
+            if (name == "DIV") keys.push("_DIV_LINE");
+            else keys.push(Object.keys(CHAR_DATABASE).find(k => CHAR_DATABASE[k].name == name));
+        })
+
+    }
     for (var i = 0; i < keys.length; i++) {
         if (keys[i] == "_DIV_LINE") {
             addDivLine(char_table);
@@ -108,7 +120,7 @@ async function addNewChar(char_table, id) {
         div.querySelector(".counter").textContent = (curr_count == 0) ? "未所持" : (curr_count == 1) ? "無凸" : (curr_count - 1).toString() + "凸";
         div.querySelector(".counter").setAttribute("curr_count", curr_count);
         if (curr_count == 0) {
-            div.style.opacity = 0.5;
+            div.style.opacity = 0.7;
         } else {
             div.style.removeProperty("opacity");
         }
