@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'myfont';
+    src: url('genshin_clock.ttf') format('truetype');
+}
+
+body {
+    font-family: myfont;
+    -webkit-text-stroke: 5px black;
+    color: white;
+
+    background-color: white;
+    text-align: center;
+}

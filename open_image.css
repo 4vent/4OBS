@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+}
+
+#srcinput {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    position: relative;
+}
+
+input {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 30px;
+    width: 300px;
+    margin: auto;
+    position: absolute;
+}
+#img {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+img {
+    object-fit: contain;
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
